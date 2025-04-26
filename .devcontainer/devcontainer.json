@@ -1,0 +1,40 @@
+{
+	"name": "Java",
+	// O usa una imagen más específica: "mcr.microsoft.com/devcontainers/java:17"
+	// donde 17 es la versión de Java que quieres usar.
+	"image": "mcr.microsoft.com/devcontainers/java:21", // Usando Java 21
+
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none", // La versión de Java ya está en la imagen base
+			"installMaven": "true", // Asegura que Maven esté instalado
+			"installGradle": "false"
+		},
+		// Añadir la característica de Docker para permitir acceso a Docker desde el devcontainer
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"vmware.vscode-spring-boot",
+				"GitHub.copilot-chat"
+			]
+		}
+	},
+
+	// Reenvía el puerto estándar de Spring Boot
+	"forwardPorts": [8080],
+
+	// Ejecuta 'mvn spring-boot:run' después de crear el contenedor para iniciar la aplicación
+	// "postCreateCommand": "mvn spring-boot:run",
+
+	// Comenta para ejecutar como root en su lugar. Más información: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "vscode",
+
+	// Montar el socket Docker del host para permitir a Testcontainers funcionar dentro del devcontainer
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+	]
+}
