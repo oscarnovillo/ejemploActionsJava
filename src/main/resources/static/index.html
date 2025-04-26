@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión Hospitalaria</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        header {
+            background-color: #0275d8;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            color: #0275d8;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-top: 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature-card h3 {
+            color: #0275d8;
+            margin-top: 0;
+        }
+        .tech-stack {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+        }
+        .tech-stack ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding-left: 1.5rem;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eaeaea;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestión Hospitalaria</h1>
+        <p>Una aplicación REST para la gestión de pacientes y registros médicos</p>
+    </header>
+
+    <section>
+        <h2>Descripción del Proyecto</h2>
+        <p>
+            Este proyecto implementa un sistema de gestión hospitalaria completo utilizando Spring Boot como backend. 
+            La aplicación permite administrar pacientes, doctores, registros médicos y medicamentos prescritos, 
+            proporcionando una API REST completa que facilita la integración con aplicaciones cliente.
+        </p>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Gestión de Pacientes</h3>
+            <p>Permite crear, consultar, actualizar y eliminar información de pacientes, incluyendo datos personales y credenciales de acceso.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Registros Médicos</h3>
+            <p>Administra registros médicos asociados a pacientes, con diagnósticos, fechas de admisión y medicamentos prescritos.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Sistema de Pagos</h3>
+            <p>Seguimiento de pagos asociados a cada paciente, facilitando la gestión financiera del hospital.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Autenticación</h3>
+            <p>Sistema de autenticación de usuarios mediante credenciales almacenadas de forma segura.</p>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <h2>Stack Tecnológico</h2>
+        <ul>
+            <li>Java 21</li>
+            <li>Spring Boot 3.2</li>
+            <li>Spring JDBC</li>
+            <li>MySQL Database</li>
+            <li>Lombok</li>
+            <li>Docker</li>
+            <li>Maven</li>
+            <li>GitHub Actions para CI/CD</li>
+            <li>TestContainers para pruebas</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Endpoints API REST</h2>
+        <p>La API expone los siguientes endpoints principales:</p>
+        <ul>
+            <li><strong>GET /patients</strong> - Obtener todos los pacientes</li>
+            <li><strong>GET /patients/{id}</strong> - Obtener un paciente específico</li>
+            <li><strong>POST /patients</strong> - Crear un nuevo paciente</li>
+            <li><strong>PUT /patients</strong> - Actualizar un paciente existente</li>
+            <li><strong>DELETE /patients/{id}</strong> - Eliminar un paciente</li>
+            <li><strong>GET /patients/{idPatient}/medRecords</strong> - Obtener registros médicos de un paciente</li>
+            <li><strong>POST /patients/medRecords</strong> - Crear un nuevo registro médico</li>
+            <li><strong>PUT /patients/medRecords</strong> - Actualizar un registro médico</li>
+            <li><strong>DELETE /patients/medRecords/{id}</strong> - Eliminar un registro médico</li>
+            <li><strong>GET /doctors</strong> - Obtener todos los doctores</li>
+            <li><strong>POST /login</strong> - Autenticar usuario</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Arquitectura</h2>
+        <p>
+            El proyecto sigue una arquitectura en capas que separa claramente las responsabilidades:
+        </p>
+        <ul>
+            <li><strong>Capa UI</strong>: Controladores REST que manejan las peticiones HTTP</li>
+            <li><strong>Capa de Servicio</strong>: Lógica de negocio y transformación de datos</li>
+            <li><strong>Capa de Acceso a Datos</strong>: Repositorios y mappers para interactuar con la base de datos</li>
+            <li><strong>Modelo de Dominio</strong>: Entidades y objetos de transferencia de datos</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Sistema de Gestión Hospitalaria © 2025 | Fecha de actualización: 26 de abril de 2025</p>
+    </footer>
+</body>
+</html>
