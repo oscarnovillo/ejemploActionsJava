@@ -23,7 +23,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-@Disabled("Prueba temporalmente deshabilitada")
+
 @JdbcTest // Configura un entorno de prueba enfocado en JDBC
 @Import({MedRecordRepository.class, MedRecordRowMapper.class, MedicationRepository.class}) // Importa las clases necesarias
 @Testcontainers // Habilita la integración con Testcontainers
